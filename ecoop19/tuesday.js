@@ -45,10 +45,10 @@ $(document).ready(function(){
 	
 	// define tracks & colors
 	var eventColors = new Array();
-	eventColors['curryon'] = 'orange'; // yellow
-	eventColors['ftfjp'] = 'blue';
-	eventColors['cop'] = 'green';
-	eventColors['grace'] = 'yellow';
+	eventColors['curryon'] = 'orange';
+	eventColors['summer-school'] = 'yellow';
+	eventColors['benchwork'] = 'turquoise';
+	eventColors['panathon'] = 'green';
 	eventColors['jstools'] = 'magenta';
 	var receptionColor = 'purple'
 	
@@ -132,4 +132,4 @@ $(document).ready(function(){
 	
 	// add extra space for Session 7a & 7b
 	//$('#curryon-session-8').height(function (index, height) { return (height + 6); });
-}) 
+})

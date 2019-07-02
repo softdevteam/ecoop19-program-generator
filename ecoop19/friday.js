@@ -44,8 +44,9 @@ $(document).ready(function(){
 	
 	// define tracks
 	var eventColors = new Array();
-	eventColors['ecoop'] = 'orange';
-	eventColors['summer-school'] = 'blue';
+	eventColors['icooolps'] = 'green';
+	eventColors['vortex'] = 'blue';
+	eventColors['doctoral'] = 'magenta';
 	
 	// assign colors to cells
 	$('.header-track').css('background-color', miscColors['event'])
@@ -116,4 +117,4 @@ $(document).ready(function(){
 	$('.session-end-text').css({'padding-top' : '4px'})
 	$('td.td-time').css({'padding-left' : '4px', 'padding-right' : '4px'})
 	$('.td-catering').css({'height' : '40px'})
-}) 
+})

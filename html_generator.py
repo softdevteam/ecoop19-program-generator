@@ -219,13 +219,21 @@ class HTMLGenerator(object):
         tick = 60 * 5
 
         # CSS class used for each track
-        css_cl_dict = {'CurryOn': 'td-curryon', 'Research Track': 'td-ecoop', 'IWACO': 'td-iwaco',
-                       'GRACE': 'td-grace', 'VORTEX': 'td-vortex', 'ICOOOLPS': 'td-icooolps',
-                       'PX': 'td-px', 'COP': 'td-cop', 'JSTools': 'td-jstools', 'FTfJP': 'td-ftfjp',
-                       'Summer School': 'td-summer-school', 'STOP': 'td-stop', 'LIVE': 'td-live',
-                       'Doctoral Symposium': 'td-doctoral',
-                       'Programming Models and Languages for Distributed Computing': 'td-pmldc',
-                       'Catering': 'td-catering'}
+        css_cl_dict = {
+            'ECOOP': 'td-ecoop',        # blue
+            'Curry On': 'td-curryon',   # orange
+            'Scala Symposium': 'td-scala', # magenta
+            'AORTA': 'td-aorta',        # red
+            'Summer School': 'td-summer-school',    # yellow
+            'VORTEX': 'td-vortex',      # blue
+            'COP': 'td-cop',            # red
+            'Panathon': 'td-panathon',  # green
+            'Posters': 'td-posters',    # green
+            'Doctoral Symposium': 'td-doctoral',    # magenta
+            'FTfJP': 'td-ftfjp',        # purple
+            'BenchWork': 'td-benchwork',# turquoise
+            'ICOOOLPS': 'td-icooolps',  # green
+        }
 
         session_counter = {}
 
@@ -236,18 +244,45 @@ class HTMLGenerator(object):
         conference_day = self.conference.conference_days[day]
 
         # tracks are sorted based on these scores
-        if day.str != '2016/07/19':
-            score = {'COP': 0, 'Research Track': -1, 'CurryOn': -2,
-                     'Programming Models and Languages for Distributed Computing': 9, 'STOP': 12, 'PX': 10,
-                     'ICOOOLPS': 5, 'VORTEX': 14, 'IWACO': 6, 'LIVE': 8, 'Summer School': 13, 'JSTools': 7,
-                     'FTfJP': 3, 'Doctoral Symposium': 2, 'GRACE': 4}
-        else:
-            score = {'COP': 0, 'Research Track': -2, 'CurryOn': -3,
-                     'Programming Models and Languages for Distributed Computing': 9, 'STOP': 12, 'PX': 10,
-                     'ICOOOLPS': 5, 'VORTEX': 14, 'IWACO': 6, 'LIVE': 8, 'Summer School': 13, 'JSTools': 7,
-                     'FTfJP': -1, 'Doctoral Symposium': 2, 'GRACE': 4}
+        score = {
+            'ECOOP': -20,
+            'Curry On': -10,
+            'Scala Symposium': 0,
+            'AORTA': 0,
+            'Summer School': 0,
+            'VORTEX': 0,
+            'COP': 0,
+            'Panathon': 0,
+            'Posters': 0,
+            'Doctoral Symposium': 0,
+            'FTfJP': 0,
+            'BenchWork': 0,
+            'ICOOOLPS': 0,
+        }
 
         tracks = conference_day.tracks
+        # Gross hack: shorten the titles.
+        title_map = {
+            'ECOOP 2019': 'ECOOP',
+            'Curry On': None,
+            'Tenth ACM SIGPLAN Scala Symposium': 'Scala Symposium',
+            'AORTA 2019': 'AORTA',
+            'Summer School': 'Summer School',
+            'VORTEX 2019: 3rd International Workshop on Verification of Objects at Runtime Execution': 'VORTEX',
+            'COP 2019': 'COP',
+            'Panathon 2019': 'Panathon',
+            'Posters': None,
+            'Doctoral Symposium': None,
+            'FTfJP 2019': 'FTfJP',
+            'BenchWork 2019 (2nd edition)': 'BenchWork',
+            'ICOOOLPS 2019': 'ICOOOLPS',
+        }
+
+        for track in tracks:
+                short_name = title_map.get(track.name)
+                if short_name is not None:
+                    track.name = short_name
+
         tracks = sorted(tracks, key=lambda track: score[track.name])
 
         print """        <html>
@@ -453,7 +488,7 @@ class HTMLGenerator(object):
         td_content += "</table>"
 
         print '\t\t<td ' + session_id + ' class="' + css_class + ' td-session" rowspan="' + str(
-            s_ticks) + '"  colspan="' + str(span) + '">' + td_content + '</td>'
+            s_ticks) + '"  colspan="' + str(span) + '">' + td_content.encode("utf-8") + '</td>'
 
     def dump_empty_session(self, e_ticks, track, tr, td_id, hour_is_on, catering_session, next_is_full_catering, prev_is_full_catering, next_has_catering, span):
 
