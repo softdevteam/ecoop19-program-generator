@@ -57,86 +57,74 @@ td {
 
 .td-curryon {
 	color: white;
-	background-color: #993030;
+	background-color: #8F8F00;
 	font-weight: bold;
+}
+
+.td-scala {
+	color: white;
+	font-weight: bold;
+	background-color: #8F8F00;
+}
+
+.td-aorta {
+	color: white;
+	font-weight: bold;
+	background-color: #8F8F00;
 }
 
 .td-summer-school {
 	color: black;
 	font-weight: bold;
-	background-color: #C7C780;
-}
-
-.td-pmldc {
-	color: white;
-	font-weight: bold;
-	background-color: #339933
-}
-
-.td-live {
-	color: white;
-	font-weight: bold;
-	background-color: #70B870
-}
-
-.td-stop {
-	color: white;
-	font-weight: bold;
-	background-color: #8DC68D
-}
-
-.td-doctoral {
-	color: black;
-	font-weight: bold;
-	background-color: #E5EEE5
-}
-
-.td-icooolps {
-	color: white;
-	font-weight: bold;
-	background-color: #6B00B2
-}
-
-.td-iwaco {
-	color: white;
-	font-weight: bold;
-	background-color: #9900FF;
-}
-
-.td-ftfjp {
-	color: white;
-	font-weight: bold;
-	background-color: #B20047
+	background-color: #8F8F00;
 }
 
 .td-vortex {
-	color: black;
+	color: white;
 	font-weight: bold;
-	background-color: #ECD1F6
-}
-
-.td-jstools {
-	color: black;
-	font-weight: bold;
-	background-color: #ECC0D2
-}
-
-.td-px {
-	color: black;
-	font-weight: bold;
-	background-color: #FFE0FF;
+	background-color: #8F8F00;
 }
 
 .td-cop {
 	color: black;
 	font-weight: bold;
-	background-color: #F8EEF3
+	background-color: #8F8F00;
 }
 
-.td-grace {
+.td-panathon {
 	color: white;
 	font-weight: bold;
-	background-color: #C94D7E
+	background-color: #8F8F00;
+}
+
+.td-posters {
+	color: white;
+	font-weight: bold;
+	background-color: #8F8F00;
+}
+
+.td-doctoral {
+	color: white;
+	font-weight: bold;
+	background-color: #8F8F00;
+}
+
+.td-ftfjp {
+	color: black;
+	font-weight: bold;
+	background-color: #8F8F00;
+}
+
+.td-benchwork {
+	color: black;
+	font-weight: bold;
+	background-color: #8F8F00;
+}
+
+.td-icooolps {
+	color: black;
+	font-weight: bold;
+	background-color: #8F8F00;
 }
 
 .td-catering.td-session {

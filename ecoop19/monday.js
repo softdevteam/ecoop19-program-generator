@@ -47,10 +47,9 @@ $(document).ready(function(){
 	// define tracks
 	var eventColors = new Array();
 	eventColors['curryon'] = 'orange';
-	eventColors['icooolps'] = 'blue';
-	eventColors['iwaco'] = 'green';
-	eventColors['px'] = 'yellow';
-	eventColors['vortex'] = 'magenta';
+	eventColors['cop'] = 'red';
+	eventColors['ftfjp'] = 'purple';
+	eventColors['summer-school'] = 'yellow';
 	
 	// assign colors to cells
 	$('.header-track').css('background-color', miscColors['event'])
@@ -127,4 +126,4 @@ $(document).ready(function(){
 	//$('#session-catering-1').css({'border-top' : 'solid 2px '+miscColors['event']})	
 	
 
-}) 
+})
