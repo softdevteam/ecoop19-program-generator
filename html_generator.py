@@ -287,6 +287,7 @@ class HTMLGenerator(object):
 
         print """        <html>
           <head>
+            <meta charset="utf-8"/>
             <title>""" + str(conference_day.day) + """</title>
             <link rel="stylesheet" type="text/css" href="schedule.css">
           </head>
