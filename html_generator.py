@@ -478,6 +478,10 @@ class HTMLGenerator(object):
                 slot.speakers[0].role.lower() == "session chair":
                 continue
 
+            # Don't display individual poster authors.
+            if css_class == "td-posters":
+                break
+
             speaker = ""
             for p in slot.speakers:
                 speaker += unicode(p.last_name).encode('ascii', 'xmlcharrefreplace') + ", "
