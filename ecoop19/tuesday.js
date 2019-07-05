@@ -1,11 +1,5 @@
 $(document).ready(function(){
 	var colWidth = '175px' // 169 best A4 fit
-		
-	// do the dirty naughty stuff first
-	$('#header-curryon').text('Curry On')
-	$('.session-end-text').text("Session end")
-	$('#empty-7').css({'height' : '6px'}) // 10 minutes
-	$('#empty-1').css({'border-right' : 'solid 1px black'})
 
 	// adjust borders (skip for cell 1:1) and column width for the table
 	$('.table-elem').css('layout', 'fixed')

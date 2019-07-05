@@ -56,7 +56,7 @@ class TimeRange(object):
 
     def get_sessions_track(self, track):
         sessions = []
-        for session in self.sessions:
+        for session in sorted(self.sessions, key=lambda x: x.room):
 
             if track is not None and session.track != track:
                 continue
