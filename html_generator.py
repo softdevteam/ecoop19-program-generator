@@ -473,6 +473,15 @@ class HTMLGenerator(object):
         session.room if session.room is not None else 'Unknown') + "</td></tr>"
         for slot in session.slots:
 
+            # Don't display "talks" which are just session chair entries
+            if len(slot.speakers) == 0 or len(slot.speakers) == 1 and \
+                slot.speakers[0].role.lower() == "session chair":
+                continue
+
+            # Don't display individual poster authors.
+            if css_class == "td-posters":
+                break
+
             speaker = ""
             for p in slot.speakers:
                 speaker += unicode(p.last_name).encode('ascii', 'xmlcharrefreplace') + ", "

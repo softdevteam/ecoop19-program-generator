@@ -157,3 +157,10 @@ table.table-session {
 .table-session td{
 	border: 0px;
 }
+
+@media print {
+    body{
+        -webkit-print-color-adjust: exact; /*chrome & webkit browsers*/
+        color-adjust: exact; /*firefox & IE */
+    }
+}
