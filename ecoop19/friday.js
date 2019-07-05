@@ -32,13 +32,7 @@ $(document).ready(function(){
 	var timeSlots = $('td.td-time')
 	timeSlots.each(function(key, obj) {
 		var startHour = $(obj).text().substring(0,5)
-		if (key == timeSlots.length - 1) {
-			var endHour = $(obj).text().substring(6,11)
-			$(obj).css("position", "relative")
-			$(obj).html(startHour+"<div style=\"position: absolute; bottom: 0\">"+endHour+"</div>")
-		} else {
-			$(obj).html(startHour)
-		}
+        $(obj).html(startHour)
 		$(obj).css({'border-left' : 'solid 2px'})
 	})
 	
