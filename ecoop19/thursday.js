@@ -1,11 +1,5 @@
 $(document).ready(function(){
 	var colWidth = '525px' // '200px'
-		
-	// do the dirty naughty stuff first
-	$('.session-end-text').text("Session end")
-	//$('#curryon-session-9 .session-room').text("Mercati di Traiano")
-	//$('.td-px.td-session td.session-slot-title').text("Note: attendance by invitation only")
-	$('#empty-4').css({'height' : '9px'}) // 15 minutes, adjusted to match empty-3
 
 	// adjust borders (skip for cell 1:1) and column width for the table
 	$('.table-elem').css('layout', 'fixed')
