@@ -60,17 +60,19 @@ class XMLParser:
                             elif slot_child.tag == 'persons':
 
                                 for person in slot_child:
+                                    current_speaker = Speaker(None, None, None, None)
                                     for person_child in person:
 
                                         if person_child.tag == 'first_name':
-                                            current_speaker = Speaker(person_child.tag, None, None)
-                                            current_slot.add_speaker(current_speaker)
-
+                                            current_speaker.name = person_child.tag
                                         elif person_child.tag == 'last_name':
                                             current_speaker.last_name = person_child.text
 
                                         elif person_child.tag == 'affiliation':
                                             current_speaker.affiliation = person_child.text
+                                        elif person_child.tag == 'role':
+                                            current_speaker.role = person_child.text
+                                    current_slot.add_speaker(current_speaker)
 
             else:
                 pass
