@@ -285,6 +285,9 @@ class HTMLGenerator(object):
 
         tracks = sorted(tracks, key=lambda track: score[track.name])
 
+        # Hack. Kill the posters column. Will add my hand later.
+        tracks = filter(lambda t: t.name != "Posters", tracks)
+
         print """        <html>
           <head>
             <meta charset="utf-8"/>
