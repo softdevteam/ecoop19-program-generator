@@ -473,7 +473,7 @@ class HTMLGenerator(object):
         td_content += "<table class=\"table-session\">"
         td_content += "<tr><td class=\"session-title\" colspan=\"2\">" + session.name + "</td></tr>"
         td_content += "<tr><td class=\"session-room\" colspan=\"2\">" + (
-        session.room if session.room is not None else 'Unknown') + "</td></tr>"
+        session.room.split("|")[1].strip() if session.room is not None else 'Unknown') + "</td></tr>"
         for slot in session.slots:
 
             # Don't display "talks" which are just session chair entries
