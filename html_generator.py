@@ -475,7 +475,8 @@ class HTMLGenerator(object):
 
             # Don't display "talks" which are just session chair entries
             if len(slot.speakers) == 0 or len(slot.speakers) == 1 and \
-                slot.speakers[0].role.lower() == "session chair":
+                slot.speakers[0].role and \
+                    slot.speakers[0].role.lower() == "session chair":
                 continue
 
             # Don't display individual poster authors.
